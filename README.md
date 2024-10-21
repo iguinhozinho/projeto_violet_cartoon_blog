@@ -61,7 +61,7 @@ Violet-Cartoon-Blog/
 
 ### 1. Clone o Repositório
 ```bash
-git clone https://github.com/seu-usuario/violet-cartoon-blog.git
+git clone https://github.com/iguinhozinho/projeto_violet_cartoon_blog.git
 cd violet-cartoon-blog
 ```
 
