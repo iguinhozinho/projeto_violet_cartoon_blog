@@ -1,0 +1,54 @@
+{% extends "base.html" %} 
+{% block title %}Detalhes da Postagem{% endblock %} 
+{% block content %}
+<div class="row">
+  <div class="col-md-8">
+    <div class="card mb-4">
+      <div class="row g-0">
+        {% if post.image %}
+        <div class="col-md-4">
+          <img
+            src="{{ url_for('static', filename='uploads/' + post.image) }}"
+            class="img-fluid rounded-start card-img-detail"
+            alt="Imagem da Postagem"
+          />
+        </div>
+        {% endif %}
+        <div class="col-md-8">
+          <div class="card-body">
+            <h2 class="post-detail-title">{{ post.title }}</h2>
+            <p class="post-detail-content">{{ post.content }}</p>
+            <p class="card-text">
+              <small class="text-muted">Publicado por: {{ post.author.username }}</small>
+            </p>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary btn-sm mt-3">Voltar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <h4 class="recommended-posts-title">Postagens Recomendadas</h4>
+    {% for recommended_post in recommended_posts %}
+    <div class="card recommended-post-card">
+      {% if recommended_post.image %}
+      <img
+        src="{{ url_for('static', filename='uploads/' + recommended_post.image) }}"
+        class="img-fluid"
+        alt="Imagem da Postagem"
+      />
+      {% endif %}
+      <div class="card-body">
+        <h5 class="card-title">{{ recommended_post.title }}</h5>
+        <p class="card-text">{{ recommended_post.content[:140] }}...</p>
+        <a
+          href="{{ url_for('post_detail', post_id=recommended_post.id) }}"
+          class="btn btn-primary btn-sm"
+          >Ler Mais</a
+        >
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

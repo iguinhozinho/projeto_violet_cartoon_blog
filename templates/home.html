@@ -1,0 +1,33 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+%}
+<div class="row">
+  {% for post in posts %}
+  <div class="col-12 col-md-6 mb-4">
+    <div class="card h-100 d-flex flex-row">
+      {% if post.image %}
+      <img
+        src="{{ url_for('static', filename='uploads/' + post.image) }}"
+        class="card-img-left img-fluid card-img-initial"
+        alt="Capa do Filme"
+        style="width: 40%; object-fit: cover"
+      />
+      {% endif %}
+      <div class="card-body" style="width: 60%">
+        <h5 class="card-title">{{ post.title }}</h5>
+        <p class="card-text">{{ post.content[:200] }}...</p>
+        <a
+          href="{{ url_for('post_detail', post_id=post.id) }}"
+          class="btn btn-primary"
+          >Ler Mais</a
+        >
+        <p class="card-text">
+          <small class="text-muted"
+            >Publicado por: {{ post.author.username }}</small
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Gerenciar Postagens{% endblock %}
+{% block content %}
+<div class="row">
+  <div class="col-md-12">
+    <h2>Gerenciar Postagens</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for postagem in postagens %}
+        <tr>
+          <td>{{ postagem.title }}</td>
+          <td>
+            <a href="{{ url_for('editar_postagem', post_id=postagem.id) }}" class="btn btn-edit btn-sm">Editar</a>
+            <form action="{{ url_for('excluir_postagem', post_id=postagem.id) }}" method="POST" style="display:inline;">
+              <input type="hidden" name="_method" value="DELETE">
+              <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
+            </form>
+          </td>          
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
