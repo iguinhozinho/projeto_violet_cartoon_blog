@@ -4,7 +4,7 @@
 ![Screenshot](https://github.com/user-attachments/assets/5aa577ed-d5ef-4d5f-a576-102ecb6a3842)
 
 ## Sobre o Projeto
-O **Violet Cartoon Blog** é um blog pessoal desenvolvido como parte de um trabalho acadêmico, focado em críticas e informações sobre filmes e séries de animação. O projeto utiliza uma stack moderna e combina diversas tecnologias para criar uma aplicação dinâmica e responsiva.
+O **Violet Cartoon** é um blog pessoal desenvolvido como parte de um trabalho acadêmico, focado em críticas e informações sobre filmes e séries de animação. O projeto utiliza uma stack moderna e combina diversas tecnologias para criar uma aplicação dinâmica e responsiva.
 
 ### Tecnologias Utilizadas
 - **Python**: Linguagem de programação usada no backend.
